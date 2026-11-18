@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">后台卡片隐藏</string>
+    <string name="xposed_desc">在最近任务（后台卡片）里隐藏勾选的应用，system_server 层过滤，快照不外泄。</string>
+    <string name="search_hint">搜索应用名或包名</string>
+    <string name="save">保存并生效</string>
+    <string name="title">勾选要隐藏的应用</string>
+</resources>

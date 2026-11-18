@@ -1,0 +1,11 @@
+# 本地构建链（JDK / Android SDK / 下载缓存），体积 1GB+，不入库
+.tools/
+
+# 构建产物
+build/
+*.apk
+*.idsig
+
+# Gradle
+.gradle/
+local.properties

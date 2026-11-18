@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  源清单：tools/gen_axml.py 会把它转成二进制 AXML 打包，Gradle 也能直接用。
+  注意：本 APK 不带 resources.arsc，所有值必须是字面量，不能写 @string / @drawable 引用。
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yg.hidecard"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="34" />
+
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <application
+        android:allowBackup="false"
+        android:label="后台卡片隐藏"
+        android:supportsRtl="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="后台卡片隐藏">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- LSPosed 模块声明 -->
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposeddescription" android:value="在最近任务(后台卡片)里隐藏勾选的应用，system_server 层过滤" />
+        <meta-data android:name="xposedminversion" android:value="93" />
+        <meta-data android:name="xposedsharedprefs" android:value="true" />
+        <!-- 推荐作用域：LSPosed 读取字符串形式，多个包名用 ; 分隔 -->
+        <meta-data android:name="xposedscope" android:value="android" />
+    </application>
+</manifest>
